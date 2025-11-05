@@ -3,7 +3,7 @@ We propose to develop a GPU-parallelized approximate nearest neighbor hashing sy
 
 Problem
 
-Computing similarity over high-dimensional game states (bitboard encodings, piece positions, future states) is computationally expensive in real time. Exact nearest neighbor search scales linearly in the number of stored states, which is infeasible at large scales. Approximate methods (locality sensitive hashing, product quantization) are commonly used in ML/vision/IR domains to speed up similarity search in high dimensions (e.g. LSH, PQ, graph-based ANN) [Zhang et al]. Meanwhile, GPU architectures and data-parallel hashing techniques have matured (e.g. “Data-Parallel Hashing Techniques for GPU Architectures”) [Lessley].
+Computing similarity over high-dimensional game states (bitboard encodings, piece positions, future states) is computationally expensive in real time. Exact nearest neighbor search scales linearly in the number of stored states, which is infeasible at large scales. Approximate methods (locality sensitive hashing, product quantization) are commonly used in ML/vision/IR domains to speed up similarity search in high dimensions (e.g. LSH, PQ, graph-based ANN). Meanwhile, GPU architectures and data-parallel hashing techniques have matured (e.g. “Data-Parallel Hashing Techniques for GPU Architectures”).
 
 State representation & embedding.
 
