@@ -8,11 +8,18 @@ Computing similarity over high-dimensional game states (bitboard encodings, piec
 State representation & embedding.
 
 We will map discrete game states (bitboards, piece vectors, augmented features) into dense vector embeddings (e.g. via learned encoders or handcrafted features).
+
 Hash indexing & ANN scheme.
-We will implement and compare multiple hashing / ANN schemes such as Locality Sensitive Hashing (LSH) (e.g. random projections) [Puneet], data-dependent / deep hashing (learning binary codes) [Luo], and  hybrid / graph + hash methods (e.g. leveraging methods in BANG for GPU-based ANN) [Karthik].
+
+We will implement and compare multiple hashing / ANN schemes such as Locality Sensitive Hashing (LSH) (e.g. random projections), data-dependent / deep hashing (learning binary codes), and  hybrid / graph + hash methods (e.g. leveraging methods in BANG for GPU-based ANN).
 We will build both CPU baseline and GPU-accelerated versions of these indexing/query pipelines, aiming to exploit parallelism in different areas.
+
 Similarity query & win-probability estimator.
+
 Upon a query state, we will retrieve its kkk-nearest neighbors (or top kkk hash-bucket candidates), then compute a small number of exact distances among them and aggregate prior outcomes (win rates) to estimate the win probability of the current state.
+
 Evaluation & comparison.
+
 We will benchmark the methods on large state databases. Metrics to compare include throughput (queries per second), recall / approximation error (how often the true nearest neighbor is returned), and accuracy of win-probability estimates (vs. ground truth computed by exhaustive search or simulation). We may also compare with off-the-shelf ANN libraries (e.g. Faiss or GPU-ANN frameworks) for baseline.
+
 This project will combine approximate similarity search, GPU-accelerated hashing/ANN, and game-state analysis to produce a fast lookup engine that can support real-time strategic evaluation in games like TFT.
