@@ -2,9 +2,11 @@
 We propose to develop a GPU-parallelized approximate nearest neighbor hashing system for real-time lookup of game board states in auto-battler / strategy games (TFT or chess variants). The goal is to enable fast estimation of win probabilities or move evaluation by retrieving similar past states from a large database, without comparing all states.
 
 Problem
+
 Computing similarity over high-dimensional game states (bitboard encodings, piece positions, future states) is computationally expensive in real time. Exact nearest neighbor search scales linearly in the number of stored states, which is infeasible at large scales. Approximate methods (locality sensitive hashing, product quantization) are commonly used in ML/vision/IR domains to speed up similarity search in high dimensions (e.g. LSH, PQ, graph-based ANN) [Zhang et al]. Meanwhile, GPU architectures and data-parallel hashing techniques have matured (e.g. “Data-Parallel Hashing Techniques for GPU Architectures”) [Lessley].
 
 State representation & embedding.
+
 We will map discrete game states (bitboards, piece vectors, augmented features) into dense vector embeddings (e.g. via learned encoders or handcrafted features).
 Hash indexing & ANN scheme.
 We will implement and compare multiple hashing / ANN schemes such as Locality Sensitive Hashing (LSH) (e.g. random projections) [Puneet], data-dependent / deep hashing (learning binary codes) [Luo], and  hybrid / graph + hash methods (e.g. leveraging methods in BANG for GPU-based ANN) [Karthik].
