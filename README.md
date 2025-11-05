@@ -1,0 +1,2 @@
+# FAST-GAME-STATE-HASHING-FOR-REAL-TIME-STRATEGY-GAMES
+We propose to develop a GPU-parallelized approximate nearest neighbor hashing system for real-time lookup of game board states in auto-battler / strategy games (TFT or chess variants). The goal is to enable fast estimation of win probabilities or move evaluation by retrieving similar past states from a large database, without comparing all states.
